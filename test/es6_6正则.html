@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则的扩展</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+		 	5.1 	RegExp构造函数
+		 	ES5 
+		 	var regex = new　RegExp(/xyz/i);-等价于> var regex = /xyz/i;
+		 	
+		 	var regex = new RegExp('xyz','i'); --等价于>var regex = /xyz/i;
+		 	但是es5不允许此时使用第二个参数，添加修饰符，否则会报错。
+		 	
+		 	ES6  如果RegExp构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式
+		 	的修饰符，只能用新指定的修饰符。
+		 	new RegExp(/abc/ig,'i').flags  -->i
+		 	
+		 	
+		 	5.2字符串
+		 	
+		 	
+		 	5.3   u修饰符
+		 	ES6对正则表达式添加了u修饰符，含义为"Unicode模式".用来正确处理大于\uFFFF的Unicode字符。也就是说会正确处理四个字节的
+		 	UTF-16编码  
+		 	加了u修饰符以后，ES6就会识别其为一个字符，所以第一行代码结果为false
+		 	一旦加上u 修饰符号，就会修改下面这些正则表达式的行为。
+		 	(1)点字符
+		 	点(.)字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于0xFFFF的Unicode字符，点字符不能识别，必须加上u修饰符
+			
+			
+			(2)Unicode字符表示法
+			必须加上u修饰符，才能识别。
+			
+			(3)量词
+			使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的Unicode字符
+			
+			(4)预定义模式
+			u修饰符也影响到预定义模式，能否正确识别码点大于0xFFFF的Unicode字符
+			
+			(5)i修饰符
+			有些Unicode字符的编码不同，但是字型很相近，比如，\u0048与\u212A,都是大写的K
+			
+			5.4		y修饰符
+			
+			叫做"粘连" (sticky)修饰符
+			
+			
+			* 
+			* 
+			* 
+			* * */
+		</script>
+	</body>
+</html>

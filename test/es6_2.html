@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//2.2块级作用域
+			/*
+			 第一种场景，内层变量可能会覆盖外层变量
+			var tmp = new Date();
+			function f(){
+				console.log(tmp);
+				if(false){
+					var tmp = "hello world";
+				}
+			}
+			
+			f();
+			上面代码中，函数f执行后，输出结果为underfined,原因在于变量提升。导致内层的tmp
+			变量覆盖了外层的tmp变量
+			
+			第二种场景，用来计数的循环变量泄露为全局变量
+			var s = 'hello';
+				for(var i = 0;i<s.length;i++){
+					console.log(s[i]);
+				}
+				console.log(i);		
+			上面代码中，变量i只用来控制循环，但是循环结束后，它并没有消失。泄露成了全局变量。
+			 * */
+			
+			//2.2.2ES6的块级作用域
+			/*
+			 let实际上为javascript新增了块级作用域
+			function f1(){
+				let n = 5;
+				if(true){
+					let n =10;
+				}
+				console.log(n);
+			}
+			f1();
+			上面的函数有两个代码块，都声明了变量n.运行后输出5.这表示外层代码块不收内层代码块的影响。如果使用var定义变量，
+			最后输出的值就是10
+			
+			
+			ES6允许代码块作用域的任意嵌套
+			{{{{{
+				{let insame = 'hello'}
+			console.log(insame);
+			}}}}}
+			
+			上面代码使用了一个五层的块级作用域。外层作用域无法读取内层作用域的变量、
+			内层作用域可以定义外层作用域的同名变量。
+			{{{{{
+				let insame = 'hello';
+				{let insame = 'hello'}
+			}}}}}
+			
+			* * */
+			
+			//2.2.3 块级作用域与函数声明
+			/*
+			 ES6引入了块级作用域，明确允许在块级作用域之中声明函数
+			 * */
+//				function f(){console.log('i am outside!');}
+				
+				/*(function (){
+					if(false){
+						//重复声明一次函数f
+						function f(){console.log('i am inside!');}
+					}
+					f();
+				}());
+				*/
+				/*(function (){
+					f();
+				}());
+				*/
+				
+				let first = 'hubwiz';
+				let last = '汇智网';
+				document.write(`Hello${first}${last}`);
+				
+				//模板字符串可以包含多行
+				/*let multiLine = '
+			　　　　This is
+			　　　　a string
+			　　　　with multiple
+			　　　　lines';
+			document.write(multiLine);
+			*/
+			
+			//标签模板
+			var a = 5;
+			var b = 10;
+			tag`Hello${a+b}world${a*b}`;
+		</script>
+	</body>
+</html>

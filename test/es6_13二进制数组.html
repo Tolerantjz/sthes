@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二进制数组</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 12		二进制数组
+			 12.1	ArrayBuffer对象
+			 ArrayBuffer对象代表存储二进制数据的一段内存，它不能直接读写，只能通过师徒(TypedArray视图和DataView)来读写，视图的作用是以指定格式解读二进制数据。
+			 ArrayBuffer也是一个构造函数，可以分配一段可以存放数据的连续内存区域
+			 TypedArray和DataView的区别是 它不是一个构造函数，而是一组构造函数，代表不同的数据格式。
+			 
+			 12.2	TypedArray视图
+			 ArrayBuffer对象作为内存区域，可以存放多重类型的数据。同一段内存，不同数据有不同的解读方式，这就叫做"视图"(view).ArrayBuffer有两种视图，一种是TypedArray视图，另一种是DataView视图。前者的数组成员都是同一个数据类型。后者的数组成员可以是不同的数据类型，
+			 
+			 
+			 13.1.3		遍历操作
+			 Set结构的实例有四个遍历方法，看用于遍历成员。
+			 keys():返回键名的遍历器
+			 values():返回键值的遍历器
+			 entries()：返回键值对的遍历器
+			 forEach():返回回调函数的遍历器
+			 注:Set的遍历顺序是插入顺序，这个特性有时非常有用，例如使用Set保存一个回调函数列表，调用时就能保证按照添加顺序调用。
+			 
+			 WeakSet
+			 与Set类似，也是不重复的值的集合，但是，它与Set有两个区别
+			 首先，WeakSet的成员只能是对象，而不能是其他类型的值
+			 其次，WeakSet中的对象都是调引用，即垃圾回收机制不考虑WeakSet对该对象的引用，如果其他对象不再引用该对象，那么垃圾回收机制会自动回收该对象占用的内存，不考虑该对象还存在于WeakSet之中，这个特点以为着，无法引用
+			 WeakSet之中，  WeakSet是不可能遍历的。
+			 
+		 13.3		Map
+		 Map解构的目的和基本用法
+		 javascript的对象(Object),本质上是键值对的集合(Hash结构),但是只能用字符串当作键，这给它的使用带来了很大的限制。
+		 
+			 
+		18	Class
+		基本语法
+		javascript语言的传统方法是通过构造函数，定义并生成新对象。
+			 
+		constructor方法
+		是class的默认方法，通过new命令生成对象实例，自动调用该方法，一个雷必须有constructor方法，如果没有显示定义。一个空的constructor方法会被默认添加\n
+		
+		类的实例对象
+		 var point = new Point(2,3);
+			
+			
+		18.2.5		super关键字
+		(1)作为函数调用时,super代表父类的构造函数
+		(2)作为对象调用时，super代表父类。此时super即可用引用父类实例的属性和方法，也可以引用父类的静态方法。
+		
+		class的取值函数(getter)和存值函数(setter)
+		
+		Module语法是JavaScript模块的标准写法，坚持使用这种写法。使用import取代require.
+		
+			 
+			 */
+		</script>
+	</body>
+</html>
